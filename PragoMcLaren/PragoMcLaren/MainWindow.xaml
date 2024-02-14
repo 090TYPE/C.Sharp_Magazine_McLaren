@@ -1,0 +1,53 @@
+﻿<Window x:Class="PragoMcLaren.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PragoMcLaren"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовки в верхней части окна -->
+        <DockPanel Grid.Row="0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Label MouseDoubleClick="Test_Drive" Margin="5">Тест драйв</Label>
+                <Label MouseDoubleClick="INF" Margin="5">О компании</Label>
+                <Label MouseDoubleClick="KAB" Margin="5">Личный кабинет</Label>
+            </StackPanel>
+        </DockPanel>
+
+        <!-- Основное содержимое -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Блок с информацией о коллаборации -->
+            <Border Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="2" CornerRadius="1" Margin="5">
+                <StackPanel>
+                    <Image Source="Resources/OIG2.jpg" Width="170"/>
+                    <TextBlock TextWrapping="Wrap" Margin="10">
+            <Run Text="Наш диллерский центр сделал коллаборацию с Burger King. И теперь в нашем диллерском центре будут продаваться Роял Фри"/>
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+
+            <!-- Дополнительный блок с информацией с Border -->
+            <Border Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="2" CornerRadius="1" Margin="5">
+                <StackPanel>
+                    <Image Source="Resources/OIG2.gpqee.jpg" Width="170"/>
+                    <TextBlock TextWrapping="Wrap" Margin="10">
+            <Run Text="Компания UnclePiston пытается отсудить у нас часть компании за то, что мы используем их продукцию😱"/>
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
