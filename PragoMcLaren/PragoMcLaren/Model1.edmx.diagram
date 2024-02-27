@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6b3c34abb87c4a2896044adc429d9b5d" Name="Diagram1" ZoomLevel="62">
+        <EntityTypeShape EntityType="McLarenModel.Автомобили" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="McLarenModel.Запчасти" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="McLarenModel.Клиенты" Width="1.5" PointX="10.875" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="McLarenModel.Пользователи" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="McLarenModel.Продажи" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="McLarenModel.СервисныеВизиты" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="McLarenModel.СкладАвтомобилей" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="McLarenModel.Сотрудники" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="McLarenModel.ТестДрайвы" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="McLarenModel.ФинансовыеУсловия" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="McLarenModel.FK__Продажи__IDАвтом__6EF57B66" ManuallyRouted="false" />
+        <AssociationConnector Association="McLarenModel.FK__Сервисные__IDАвт__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="McLarenModel.FK__СкладАвто__IDАвт__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="McLarenModel.FK__ТестДрайв__IDАвт__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="McLarenModel.FK__Финансовы__IDАвт__04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="McLarenModel.FK__Клиенты__IDПольз__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="McLarenModel.FK__Продажи__IDКлиен__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="McLarenModel.FK__Сервисные__IDКли__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="McLarenModel.FK__ТестДрайв__IDКли__71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="McLarenModel.FK__Финансовы__IDКли__03F0984C" ManuallyRouted="false" />
+        <AssociationConnector Association="McLarenModel.FK__Сотрудник__IDПол__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="McLarenModel.FK__Сервисные__IDСот__787EE5A0" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

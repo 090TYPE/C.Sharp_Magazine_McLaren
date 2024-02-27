@@ -35,6 +35,11 @@ namespace PragoMcLaren
             INF inf = new INF();
             inf.Show();
         }
+        private void POKUPKA(object sender, RoutedEventArgs e)
+        {
+            CARS cars = new CARS();
+            cars.Show();
+        }
 
         private void Test_Drive(object sender, RoutedEventArgs e)
         {

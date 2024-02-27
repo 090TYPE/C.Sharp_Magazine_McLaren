@@ -19,3 +19,12 @@ C:\Users\090\source\repos\PragoMcLaren\PragoMcLaren\obj\Debug\INF.g.cs
 C:\Users\090\source\repos\PragoMcLaren\PragoMcLaren\obj\Debug\Window2.g.cs
 C:\Users\090\source\repos\PragoMcLaren\PragoMcLaren\obj\Debug\INF.baml
 C:\Users\090\source\repos\PragoMcLaren\PragoMcLaren\obj\Debug\Window2.baml
+C:\Users\090\source\repos\PragoMcLaren\PragoMcLaren\bin\Debug\EntityFramework.dll
+C:\Users\090\source\repos\PragoMcLaren\PragoMcLaren\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\090\source\repos\PragoMcLaren\PragoMcLaren\bin\Debug\EntityFramework.xml
+C:\Users\090\source\repos\PragoMcLaren\PragoMcLaren\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\090\source\repos\PragoMcLaren\PragoMcLaren\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\090\source\repos\PragoMcLaren\PragoMcLaren\obj\Debug\PragoMcLaren_Content.g.cs
+C:\Users\090\source\repos\PragoMcLaren\PragoMcLaren\obj\Debug\PragoMcL.044AB9CE.Up2Date
+C:\Users\090\source\repos\PragoMcLaren\PragoMcLaren\obj\Debug\CARS.g.cs
+C:\Users\090\source\repos\PragoMcLaren\PragoMcLaren\obj\Debug\CARS.baml

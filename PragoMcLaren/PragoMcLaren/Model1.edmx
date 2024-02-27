@@ -1,0 +1,827 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище McLarenModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Автомобили">
+          <Key>
+            <PropertyRef Name="IDАвтомобиля" />
+          </Key>
+          <Property Name="IDАвтомобиля" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Модель" Type="nvarchar" MaxLength="50" />
+          <Property Name="Год" Type="int" />
+          <Property Name="Цвет" Type="nvarchar" MaxLength="30" />
+          <Property Name="ТипДвигателя" Type="nvarchar" MaxLength="30" />
+          <Property Name="Мощность" Type="int" />
+          <Property Name="Цена" Type="money" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "McLaren.dbo.АвтомобилиИЗапчасти" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="АвтомобилиИЗапчасти">
+          <Property Name="IDАвтомобиля" Type="int" />
+          <Property Name="IDЗапчасти" Type="int" />
+          <Property Name="НеобходимоеКоличество" Type="int" />
+        </EntityType>-->
+        <EntityType Name="Запчасти">
+          <Key>
+            <PropertyRef Name="IDЗапчасти" />
+          </Key>
+          <Property Name="IDЗапчасти" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Название" Type="nvarchar" MaxLength="100" />
+          <Property Name="Описание" Type="text" />
+          <Property Name="Цена" Type="money" />
+          <Property Name="КоличествоНаСкладе" Type="int" />
+        </EntityType>
+        <EntityType Name="Клиенты">
+          <Key>
+            <PropertyRef Name="IDКлиента" />
+          </Key>
+          <Property Name="IDКлиента" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Имя" Type="nvarchar" MaxLength="50" />
+          <Property Name="Фамилия" Type="nvarchar" MaxLength="50" />
+          <Property Name="ЭлектроннаяПочта" Type="nvarchar" MaxLength="100" />
+          <Property Name="Телефон" Type="nvarchar" MaxLength="20" />
+          <Property Name="Адрес" Type="nvarchar" MaxLength="100" />
+          <Property Name="Город" Type="nvarchar" MaxLength="50" />
+          <Property Name="Страна" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDПользователя" Type="int" />
+        </EntityType>
+        <EntityType Name="Пользователи">
+          <Key>
+            <PropertyRef Name="IDПользователя" />
+          </Key>
+          <Property Name="IDПользователя" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Логин" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="Пароль" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="Роль" Type="varchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Продажи">
+          <Key>
+            <PropertyRef Name="IDПродажи" />
+          </Key>
+          <Property Name="IDПродажи" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDКлиента" Type="int" />
+          <Property Name="IDАвтомобиля" Type="int" />
+          <Property Name="ДатаПродажи" Type="date" />
+          <Property Name="ЦенаПродажи" Type="money" />
+        </EntityType>
+        <EntityType Name="СервисныеВизиты">
+          <Key>
+            <PropertyRef Name="IDВизита" />
+          </Key>
+          <Property Name="IDВизита" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDАвтомобиля" Type="int" />
+          <Property Name="IDКлиента" Type="int" />
+          <Property Name="IDСотрудника" Type="int" />
+          <Property Name="ДатаВизита" Type="date" />
+          <Property Name="ТипОбслуживания" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="СкладАвтомобилей">
+          <Key>
+            <PropertyRef Name="IDЗаписиНаСкладе" />
+          </Key>
+          <Property Name="IDЗаписиНаСкладе" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDАвтомобиля" Type="int" />
+          <Property Name="Количество" Type="int" />
+          <Property Name="Местоположение" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Сотрудники">
+          <Key>
+            <PropertyRef Name="IDСотрудника" />
+          </Key>
+          <Property Name="IDСотрудника" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Имя" Type="nvarchar" MaxLength="50" />
+          <Property Name="Фамилия" Type="nvarchar" MaxLength="50" />
+          <Property Name="Должность" Type="nvarchar" MaxLength="50" />
+          <Property Name="ДатаНайма" Type="date" />
+          <Property Name="ЭлектроннаяПочта" Type="nvarchar" MaxLength="100" />
+          <Property Name="IDПользователя" Type="int" />
+        </EntityType>
+        <EntityType Name="ТестДрайвы">
+          <Key>
+            <PropertyRef Name="IDТестДрайва" />
+          </Key>
+          <Property Name="IDТестДрайва" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDКлиента" Type="int" />
+          <Property Name="IDАвтомобиля" Type="int" />
+          <Property Name="Дата" Type="date" />
+          <Property Name="Продолжительность" Type="int" />
+          <Property Name="IDСотрудника" Type="int" />
+        </EntityType>
+        <EntityType Name="ФинансовыеУсловия">
+          <Key>
+            <PropertyRef Name="IDФинансирования" />
+          </Key>
+          <Property Name="IDФинансирования" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDКлиента" Type="int" />
+          <Property Name="IDАвтомобиля" Type="int" />
+          <Property Name="ПервоначальныйВзнос" Type="money" />
+          <Property Name="ЕжемесячныйПлатеж" Type="money" />
+          <Property Name="Срок" Type="int" />
+          <Property Name="ПроцентнаяСтавка" Type="float" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+ошибка 6004: Невозможно найти таблицу "McLaren.dbo.АвтомобилиИЗапчасти", на которую ссылается связь.
+        <Association Name="FK__Автомобил__IDАвт__4F7CD00D" />-->
+        <!--Ошибки, обнаруженные при создании:
+ошибка 6004: Невозможно найти таблицу "McLaren.dbo.АвтомобилиИЗапчасти", на которую ссылается связь.
+        <Association Name="FK__Автомобил__IDЗап__5070F446" />-->
+        <Association Name="FK__Клиенты__IDПольз__693CA210">
+          <End Role="Пользователи" Type="Self.Пользователи" Multiplicity="0..1" />
+          <End Role="Клиенты" Type="Self.Клиенты" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Пользователи">
+              <PropertyRef Name="IDПользователя" />
+            </Principal>
+            <Dependent Role="Клиенты">
+              <PropertyRef Name="IDПользователя" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Продажи__IDАвтом__6EF57B66">
+          <End Role="Автомобили" Type="Self.Автомобили" Multiplicity="0..1" />
+          <End Role="Продажи" Type="Self.Продажи" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Автомобили">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Principal>
+            <Dependent Role="Продажи">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Продажи__IDКлиен__6E01572D">
+          <End Role="Клиенты" Type="Self.Клиенты" Multiplicity="0..1" />
+          <End Role="Продажи" Type="Self.Продажи" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Клиенты">
+              <PropertyRef Name="IDКлиента" />
+            </Principal>
+            <Dependent Role="Продажи">
+              <PropertyRef Name="IDКлиента" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Сервисные__IDАвт__76969D2E">
+          <End Role="Автомобили" Type="Self.Автомобили" Multiplicity="0..1" />
+          <End Role="СервисныеВизиты" Type="Self.СервисныеВизиты" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Автомобили">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Principal>
+            <Dependent Role="СервисныеВизиты">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Сервисные__IDКли__778AC167">
+          <End Role="Клиенты" Type="Self.Клиенты" Multiplicity="0..1" />
+          <End Role="СервисныеВизиты" Type="Self.СервисныеВизиты" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Клиенты">
+              <PropertyRef Name="IDКлиента" />
+            </Principal>
+            <Dependent Role="СервисныеВизиты">
+              <PropertyRef Name="IDКлиента" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Сервисные__IDСот__787EE5A0">
+          <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="0..1" />
+          <End Role="СервисныеВизиты" Type="Self.СервисныеВизиты" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Сотрудники">
+              <PropertyRef Name="IDСотрудника" />
+            </Principal>
+            <Dependent Role="СервисныеВизиты">
+              <PropertyRef Name="IDСотрудника" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__СкладАвто__IDАвт__47DBAE45">
+          <End Role="Автомобили" Type="Self.Автомобили" Multiplicity="0..1" />
+          <End Role="СкладАвтомобилей" Type="Self.СкладАвтомобилей" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Автомобили">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Principal>
+            <Dependent Role="СкладАвтомобилей">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Сотрудник__IDПол__5FB337D6">
+          <End Role="Пользователи" Type="Self.Пользователи" Multiplicity="0..1" />
+          <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Пользователи">
+              <PropertyRef Name="IDПользователя" />
+            </Principal>
+            <Dependent Role="Сотрудники">
+              <PropertyRef Name="IDПользователя" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ТестДрайв__IDАвт__72C60C4A">
+          <End Role="Автомобили" Type="Self.Автомобили" Multiplicity="0..1" />
+          <End Role="ТестДрайвы" Type="Self.ТестДрайвы" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Автомобили">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Principal>
+            <Dependent Role="ТестДрайвы">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ТестДрайв__IDКли__71D1E811">
+          <End Role="Клиенты" Type="Self.Клиенты" Multiplicity="0..1" />
+          <End Role="ТестДрайвы" Type="Self.ТестДрайвы" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Клиенты">
+              <PropertyRef Name="IDКлиента" />
+            </Principal>
+            <Dependent Role="ТестДрайвы">
+              <PropertyRef Name="IDКлиента" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Финансовы__IDАвт__04E4BC85">
+          <End Role="Автомобили" Type="Self.Автомобили" Multiplicity="0..1" />
+          <End Role="ФинансовыеУсловия" Type="Self.ФинансовыеУсловия" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Автомобили">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Principal>
+            <Dependent Role="ФинансовыеУсловия">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Финансовы__IDКли__03F0984C">
+          <End Role="Клиенты" Type="Self.Клиенты" Multiplicity="0..1" />
+          <End Role="ФинансовыеУсловия" Type="Self.ФинансовыеУсловия" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Клиенты">
+              <PropertyRef Name="IDКлиента" />
+            </Principal>
+            <Dependent Role="ФинансовыеУсловия">
+              <PropertyRef Name="IDКлиента" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище McLarenModelContainer">
+          <EntitySet Name="Автомобили" EntityType="Self.Автомобили" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Запчасти" EntityType="Self.Запчасти" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Клиенты" EntityType="Self.Клиенты" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Пользователи" EntityType="Self.Пользователи" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Продажи" EntityType="Self.Продажи" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="СервисныеВизиты" EntityType="Self.СервисныеВизиты" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="СкладАвтомобилей" EntityType="Self.СкладАвтомобилей" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Сотрудники" EntityType="Self.Сотрудники" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ТестДрайвы" EntityType="Self.ТестДрайвы" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ФинансовыеУсловия" EntityType="Self.ФинансовыеУсловия" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Клиенты__IDПольз__693CA210" Association="Self.FK__Клиенты__IDПольз__693CA210">
+            <End Role="Пользователи" EntitySet="Пользователи" />
+            <End Role="Клиенты" EntitySet="Клиенты" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Продажи__IDАвтом__6EF57B66" Association="Self.FK__Продажи__IDАвтом__6EF57B66">
+            <End Role="Автомобили" EntitySet="Автомобили" />
+            <End Role="Продажи" EntitySet="Продажи" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Продажи__IDКлиен__6E01572D" Association="Self.FK__Продажи__IDКлиен__6E01572D">
+            <End Role="Клиенты" EntitySet="Клиенты" />
+            <End Role="Продажи" EntitySet="Продажи" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Сервисные__IDАвт__76969D2E" Association="Self.FK__Сервисные__IDАвт__76969D2E">
+            <End Role="Автомобили" EntitySet="Автомобили" />
+            <End Role="СервисныеВизиты" EntitySet="СервисныеВизиты" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Сервисные__IDКли__778AC167" Association="Self.FK__Сервисные__IDКли__778AC167">
+            <End Role="Клиенты" EntitySet="Клиенты" />
+            <End Role="СервисныеВизиты" EntitySet="СервисныеВизиты" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Сервисные__IDСот__787EE5A0" Association="Self.FK__Сервисные__IDСот__787EE5A0">
+            <End Role="Сотрудники" EntitySet="Сотрудники" />
+            <End Role="СервисныеВизиты" EntitySet="СервисныеВизиты" />
+          </AssociationSet>
+          <AssociationSet Name="FK__СкладАвто__IDАвт__47DBAE45" Association="Self.FK__СкладАвто__IDАвт__47DBAE45">
+            <End Role="Автомобили" EntitySet="Автомобили" />
+            <End Role="СкладАвтомобилей" EntitySet="СкладАвтомобилей" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Сотрудник__IDПол__5FB337D6" Association="Self.FK__Сотрудник__IDПол__5FB337D6">
+            <End Role="Пользователи" EntitySet="Пользователи" />
+            <End Role="Сотрудники" EntitySet="Сотрудники" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ТестДрайв__IDАвт__72C60C4A" Association="Self.FK__ТестДрайв__IDАвт__72C60C4A">
+            <End Role="Автомобили" EntitySet="Автомобили" />
+            <End Role="ТестДрайвы" EntitySet="ТестДрайвы" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ТестДрайв__IDКли__71D1E811" Association="Self.FK__ТестДрайв__IDКли__71D1E811">
+            <End Role="Клиенты" EntitySet="Клиенты" />
+            <End Role="ТестДрайвы" EntitySet="ТестДрайвы" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Финансовы__IDАвт__04E4BC85" Association="Self.FK__Финансовы__IDАвт__04E4BC85">
+            <End Role="Автомобили" EntitySet="Автомобили" />
+            <End Role="ФинансовыеУсловия" EntitySet="ФинансовыеУсловия" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Финансовы__IDКли__03F0984C" Association="Self.FK__Финансовы__IDКли__03F0984C">
+            <End Role="Клиенты" EntitySet="Клиенты" />
+            <End Role="ФинансовыеУсловия" EntitySet="ФинансовыеУсловия" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="McLarenModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Автомобили">
+          <Key>
+            <PropertyRef Name="IDАвтомобиля" />
+          </Key>
+          <Property Name="IDАвтомобиля" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Модель" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Год" Type="Int32" />
+          <Property Name="Цвет" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ТипДвигателя" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Мощность" Type="Int32" />
+          <Property Name="Цена" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Продажи" Relationship="Self.FK__Продажи__IDАвтом__6EF57B66" FromRole="Автомобили" ToRole="Продажи" />
+          <NavigationProperty Name="СервисныеВизиты" Relationship="Self.FK__Сервисные__IDАвт__76969D2E" FromRole="Автомобили" ToRole="СервисныеВизиты" />
+          <NavigationProperty Name="СкладАвтомобилей" Relationship="Self.FK__СкладАвто__IDАвт__47DBAE45" FromRole="Автомобили" ToRole="СкладАвтомобилей" />
+          <NavigationProperty Name="ТестДрайвы" Relationship="Self.FK__ТестДрайв__IDАвт__72C60C4A" FromRole="Автомобили" ToRole="ТестДрайвы" />
+          <NavigationProperty Name="ФинансовыеУсловия" Relationship="Self.FK__Финансовы__IDАвт__04E4BC85" FromRole="Автомобили" ToRole="ФинансовыеУсловия" />
+        </EntityType>
+        <EntityType Name="Запчасти">
+          <Key>
+            <PropertyRef Name="IDЗапчасти" />
+          </Key>
+          <Property Name="IDЗапчасти" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Название" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Описание" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Цена" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="КоличествоНаСкладе" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Клиенты">
+          <Key>
+            <PropertyRef Name="IDКлиента" />
+          </Key>
+          <Property Name="IDКлиента" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Имя" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Фамилия" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ЭлектроннаяПочта" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Телефон" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Адрес" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Город" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Страна" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDПользователя" Type="Int32" />
+          <NavigationProperty Name="Пользователи" Relationship="Self.FK__Клиенты__IDПольз__693CA210" FromRole="Клиенты" ToRole="Пользователи" />
+          <NavigationProperty Name="Продажи" Relationship="Self.FK__Продажи__IDКлиен__6E01572D" FromRole="Клиенты" ToRole="Продажи" />
+          <NavigationProperty Name="СервисныеВизиты" Relationship="Self.FK__Сервисные__IDКли__778AC167" FromRole="Клиенты" ToRole="СервисныеВизиты" />
+          <NavigationProperty Name="ТестДрайвы" Relationship="Self.FK__ТестДрайв__IDКли__71D1E811" FromRole="Клиенты" ToRole="ТестДрайвы" />
+          <NavigationProperty Name="ФинансовыеУсловия" Relationship="Self.FK__Финансовы__IDКли__03F0984C" FromRole="Клиенты" ToRole="ФинансовыеУсловия" />
+        </EntityType>
+        <EntityType Name="Пользователи">
+          <Key>
+            <PropertyRef Name="IDПользователя" />
+          </Key>
+          <Property Name="IDПользователя" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Логин" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Пароль" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Роль" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Клиенты" Relationship="Self.FK__Клиенты__IDПольз__693CA210" FromRole="Пользователи" ToRole="Клиенты" />
+          <NavigationProperty Name="Сотрудники" Relationship="Self.FK__Сотрудник__IDПол__5FB337D6" FromRole="Пользователи" ToRole="Сотрудники" />
+        </EntityType>
+        <EntityType Name="Продажи">
+          <Key>
+            <PropertyRef Name="IDПродажи" />
+          </Key>
+          <Property Name="IDПродажи" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDКлиента" Type="Int32" />
+          <Property Name="IDАвтомобиля" Type="Int32" />
+          <Property Name="ДатаПродажи" Type="DateTime" Precision="0" />
+          <Property Name="ЦенаПродажи" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Автомобили" Relationship="Self.FK__Продажи__IDАвтом__6EF57B66" FromRole="Продажи" ToRole="Автомобили" />
+          <NavigationProperty Name="Клиенты" Relationship="Self.FK__Продажи__IDКлиен__6E01572D" FromRole="Продажи" ToRole="Клиенты" />
+        </EntityType>
+        <EntityType Name="СервисныеВизиты">
+          <Key>
+            <PropertyRef Name="IDВизита" />
+          </Key>
+          <Property Name="IDВизита" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDАвтомобиля" Type="Int32" />
+          <Property Name="IDКлиента" Type="Int32" />
+          <Property Name="IDСотрудника" Type="Int32" />
+          <Property Name="ДатаВизита" Type="DateTime" Precision="0" />
+          <Property Name="ТипОбслуживания" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Автомобили" Relationship="Self.FK__Сервисные__IDАвт__76969D2E" FromRole="СервисныеВизиты" ToRole="Автомобили" />
+          <NavigationProperty Name="Клиенты" Relationship="Self.FK__Сервисные__IDКли__778AC167" FromRole="СервисныеВизиты" ToRole="Клиенты" />
+          <NavigationProperty Name="Сотрудники" Relationship="Self.FK__Сервисные__IDСот__787EE5A0" FromRole="СервисныеВизиты" ToRole="Сотрудники" />
+        </EntityType>
+        <EntityType Name="СкладАвтомобилей">
+          <Key>
+            <PropertyRef Name="IDЗаписиНаСкладе" />
+          </Key>
+          <Property Name="IDЗаписиНаСкладе" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDАвтомобиля" Type="Int32" />
+          <Property Name="Количество" Type="Int32" />
+          <Property Name="Местоположение" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Автомобили" Relationship="Self.FK__СкладАвто__IDАвт__47DBAE45" FromRole="СкладАвтомобилей" ToRole="Автомобили" />
+        </EntityType>
+        <EntityType Name="Сотрудники">
+          <Key>
+            <PropertyRef Name="IDСотрудника" />
+          </Key>
+          <Property Name="IDСотрудника" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Имя" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Фамилия" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Должность" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ДатаНайма" Type="DateTime" Precision="0" />
+          <Property Name="ЭлектроннаяПочта" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IDПользователя" Type="Int32" />
+          <NavigationProperty Name="Пользователи" Relationship="Self.FK__Сотрудник__IDПол__5FB337D6" FromRole="Сотрудники" ToRole="Пользователи" />
+          <NavigationProperty Name="СервисныеВизиты" Relationship="Self.FK__Сервисные__IDСот__787EE5A0" FromRole="Сотрудники" ToRole="СервисныеВизиты" />
+        </EntityType>
+        <EntityType Name="ТестДрайвы">
+          <Key>
+            <PropertyRef Name="IDТестДрайва" />
+          </Key>
+          <Property Name="IDТестДрайва" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDКлиента" Type="Int32" />
+          <Property Name="IDАвтомобиля" Type="Int32" />
+          <Property Name="Дата" Type="DateTime" Precision="0" />
+          <Property Name="Продолжительность" Type="Int32" />
+          <Property Name="IDСотрудника" Type="Int32" />
+          <NavigationProperty Name="Автомобили" Relationship="Self.FK__ТестДрайв__IDАвт__72C60C4A" FromRole="ТестДрайвы" ToRole="Автомобили" />
+          <NavigationProperty Name="Клиенты" Relationship="Self.FK__ТестДрайв__IDКли__71D1E811" FromRole="ТестДрайвы" ToRole="Клиенты" />
+        </EntityType>
+        <EntityType Name="ФинансовыеУсловия">
+          <Key>
+            <PropertyRef Name="IDФинансирования" />
+          </Key>
+          <Property Name="IDФинансирования" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDКлиента" Type="Int32" />
+          <Property Name="IDАвтомобиля" Type="Int32" />
+          <Property Name="ПервоначальныйВзнос" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ЕжемесячныйПлатеж" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Срок" Type="Int32" />
+          <Property Name="ПроцентнаяСтавка" Type="Double" />
+          <NavigationProperty Name="Автомобили" Relationship="Self.FK__Финансовы__IDАвт__04E4BC85" FromRole="ФинансовыеУсловия" ToRole="Автомобили" />
+          <NavigationProperty Name="Клиенты" Relationship="Self.FK__Финансовы__IDКли__03F0984C" FromRole="ФинансовыеУсловия" ToRole="Клиенты" />
+        </EntityType>
+        <Association Name="FK__Продажи__IDАвтом__6EF57B66">
+          <End Role="Автомобили" Type="Self.Автомобили" Multiplicity="0..1" />
+          <End Role="Продажи" Type="Self.Продажи" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Автомобили">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Principal>
+            <Dependent Role="Продажи">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Сервисные__IDАвт__76969D2E">
+          <End Role="Автомобили" Type="Self.Автомобили" Multiplicity="0..1" />
+          <End Role="СервисныеВизиты" Type="Self.СервисныеВизиты" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Автомобили">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Principal>
+            <Dependent Role="СервисныеВизиты">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__СкладАвто__IDАвт__47DBAE45">
+          <End Role="Автомобили" Type="Self.Автомобили" Multiplicity="0..1" />
+          <End Role="СкладАвтомобилей" Type="Self.СкладАвтомобилей" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Автомобили">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Principal>
+            <Dependent Role="СкладАвтомобилей">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ТестДрайв__IDАвт__72C60C4A">
+          <End Role="Автомобили" Type="Self.Автомобили" Multiplicity="0..1" />
+          <End Role="ТестДрайвы" Type="Self.ТестДрайвы" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Автомобили">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Principal>
+            <Dependent Role="ТестДрайвы">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Финансовы__IDАвт__04E4BC85">
+          <End Role="Автомобили" Type="Self.Автомобили" Multiplicity="0..1" />
+          <End Role="ФинансовыеУсловия" Type="Self.ФинансовыеУсловия" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Автомобили">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Principal>
+            <Dependent Role="ФинансовыеУсловия">
+              <PropertyRef Name="IDАвтомобиля" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Клиенты__IDПольз__693CA210">
+          <End Role="Пользователи" Type="Self.Пользователи" Multiplicity="0..1" />
+          <End Role="Клиенты" Type="Self.Клиенты" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Пользователи">
+              <PropertyRef Name="IDПользователя" />
+            </Principal>
+            <Dependent Role="Клиенты">
+              <PropertyRef Name="IDПользователя" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Продажи__IDКлиен__6E01572D">
+          <End Role="Клиенты" Type="Self.Клиенты" Multiplicity="0..1" />
+          <End Role="Продажи" Type="Self.Продажи" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Клиенты">
+              <PropertyRef Name="IDКлиента" />
+            </Principal>
+            <Dependent Role="Продажи">
+              <PropertyRef Name="IDКлиента" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Сервисные__IDКли__778AC167">
+          <End Role="Клиенты" Type="Self.Клиенты" Multiplicity="0..1" />
+          <End Role="СервисныеВизиты" Type="Self.СервисныеВизиты" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Клиенты">
+              <PropertyRef Name="IDКлиента" />
+            </Principal>
+            <Dependent Role="СервисныеВизиты">
+              <PropertyRef Name="IDКлиента" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ТестДрайв__IDКли__71D1E811">
+          <End Role="Клиенты" Type="Self.Клиенты" Multiplicity="0..1" />
+          <End Role="ТестДрайвы" Type="Self.ТестДрайвы" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Клиенты">
+              <PropertyRef Name="IDКлиента" />
+            </Principal>
+            <Dependent Role="ТестДрайвы">
+              <PropertyRef Name="IDКлиента" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Финансовы__IDКли__03F0984C">
+          <End Role="Клиенты" Type="Self.Клиенты" Multiplicity="0..1" />
+          <End Role="ФинансовыеУсловия" Type="Self.ФинансовыеУсловия" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Клиенты">
+              <PropertyRef Name="IDКлиента" />
+            </Principal>
+            <Dependent Role="ФинансовыеУсловия">
+              <PropertyRef Name="IDКлиента" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Сотрудник__IDПол__5FB337D6">
+          <End Role="Пользователи" Type="Self.Пользователи" Multiplicity="0..1" />
+          <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Пользователи">
+              <PropertyRef Name="IDПользователя" />
+            </Principal>
+            <Dependent Role="Сотрудники">
+              <PropertyRef Name="IDПользователя" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Сервисные__IDСот__787EE5A0">
+          <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="0..1" />
+          <End Role="СервисныеВизиты" Type="Self.СервисныеВизиты" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Сотрудники">
+              <PropertyRef Name="IDСотрудника" />
+            </Principal>
+            <Dependent Role="СервисныеВизиты">
+              <PropertyRef Name="IDСотрудника" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="McLarenEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Автомобили" EntityType="Self.Автомобили" />
+          <EntitySet Name="Запчасти" EntityType="Self.Запчасти" />
+          <EntitySet Name="Клиенты" EntityType="Self.Клиенты" />
+          <EntitySet Name="Пользователи" EntityType="Self.Пользователи" />
+          <EntitySet Name="Продажи" EntityType="Self.Продажи" />
+          <EntitySet Name="СервисныеВизиты" EntityType="Self.СервисныеВизиты" />
+          <EntitySet Name="СкладАвтомобилей" EntityType="Self.СкладАвтомобилей" />
+          <EntitySet Name="Сотрудники" EntityType="Self.Сотрудники" />
+          <EntitySet Name="ТестДрайвы" EntityType="Self.ТестДрайвы" />
+          <EntitySet Name="ФинансовыеУсловия" EntityType="Self.ФинансовыеУсловия" />
+          <AssociationSet Name="FK__Продажи__IDАвтом__6EF57B66" Association="Self.FK__Продажи__IDАвтом__6EF57B66">
+            <End Role="Автомобили" EntitySet="Автомобили" />
+            <End Role="Продажи" EntitySet="Продажи" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Сервисные__IDАвт__76969D2E" Association="Self.FK__Сервисные__IDАвт__76969D2E">
+            <End Role="Автомобили" EntitySet="Автомобили" />
+            <End Role="СервисныеВизиты" EntitySet="СервисныеВизиты" />
+          </AssociationSet>
+          <AssociationSet Name="FK__СкладАвто__IDАвт__47DBAE45" Association="Self.FK__СкладАвто__IDАвт__47DBAE45">
+            <End Role="Автомобили" EntitySet="Автомобили" />
+            <End Role="СкладАвтомобилей" EntitySet="СкладАвтомобилей" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ТестДрайв__IDАвт__72C60C4A" Association="Self.FK__ТестДрайв__IDАвт__72C60C4A">
+            <End Role="Автомобили" EntitySet="Автомобили" />
+            <End Role="ТестДрайвы" EntitySet="ТестДрайвы" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Финансовы__IDАвт__04E4BC85" Association="Self.FK__Финансовы__IDАвт__04E4BC85">
+            <End Role="Автомобили" EntitySet="Автомобили" />
+            <End Role="ФинансовыеУсловия" EntitySet="ФинансовыеУсловия" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Клиенты__IDПольз__693CA210" Association="Self.FK__Клиенты__IDПольз__693CA210">
+            <End Role="Пользователи" EntitySet="Пользователи" />
+            <End Role="Клиенты" EntitySet="Клиенты" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Продажи__IDКлиен__6E01572D" Association="Self.FK__Продажи__IDКлиен__6E01572D">
+            <End Role="Клиенты" EntitySet="Клиенты" />
+            <End Role="Продажи" EntitySet="Продажи" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Сервисные__IDКли__778AC167" Association="Self.FK__Сервисные__IDКли__778AC167">
+            <End Role="Клиенты" EntitySet="Клиенты" />
+            <End Role="СервисныеВизиты" EntitySet="СервисныеВизиты" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ТестДрайв__IDКли__71D1E811" Association="Self.FK__ТестДрайв__IDКли__71D1E811">
+            <End Role="Клиенты" EntitySet="Клиенты" />
+            <End Role="ТестДрайвы" EntitySet="ТестДрайвы" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Финансовы__IDКли__03F0984C" Association="Self.FK__Финансовы__IDКли__03F0984C">
+            <End Role="Клиенты" EntitySet="Клиенты" />
+            <End Role="ФинансовыеУсловия" EntitySet="ФинансовыеУсловия" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Сотрудник__IDПол__5FB337D6" Association="Self.FK__Сотрудник__IDПол__5FB337D6">
+            <End Role="Пользователи" EntitySet="Пользователи" />
+            <End Role="Сотрудники" EntitySet="Сотрудники" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Сервисные__IDСот__787EE5A0" Association="Self.FK__Сервисные__IDСот__787EE5A0">
+            <End Role="Сотрудники" EntitySet="Сотрудники" />
+            <End Role="СервисныеВизиты" EntitySet="СервисныеВизиты" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище McLarenModelContainer" CdmEntityContainer="McLarenEntities">
+          <EntitySetMapping Name="Автомобили">
+            <EntityTypeMapping TypeName="McLarenModel.Автомобили">
+              <MappingFragment StoreEntitySet="Автомобили">
+                <ScalarProperty Name="IDАвтомобиля" ColumnName="IDАвтомобиля" />
+                <ScalarProperty Name="Модель" ColumnName="Модель" />
+                <ScalarProperty Name="Год" ColumnName="Год" />
+                <ScalarProperty Name="Цвет" ColumnName="Цвет" />
+                <ScalarProperty Name="ТипДвигателя" ColumnName="ТипДвигателя" />
+                <ScalarProperty Name="Мощность" ColumnName="Мощность" />
+                <ScalarProperty Name="Цена" ColumnName="Цена" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Запчасти">
+            <EntityTypeMapping TypeName="McLarenModel.Запчасти">
+              <MappingFragment StoreEntitySet="Запчасти">
+                <ScalarProperty Name="IDЗапчасти" ColumnName="IDЗапчасти" />
+                <ScalarProperty Name="Название" ColumnName="Название" />
+                <ScalarProperty Name="Описание" ColumnName="Описание" />
+                <ScalarProperty Name="Цена" ColumnName="Цена" />
+                <ScalarProperty Name="КоличествоНаСкладе" ColumnName="КоличествоНаСкладе" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Клиенты">
+            <EntityTypeMapping TypeName="McLarenModel.Клиенты">
+              <MappingFragment StoreEntitySet="Клиенты">
+                <ScalarProperty Name="IDКлиента" ColumnName="IDКлиента" />
+                <ScalarProperty Name="Имя" ColumnName="Имя" />
+                <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+                <ScalarProperty Name="ЭлектроннаяПочта" ColumnName="ЭлектроннаяПочта" />
+                <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+                <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+                <ScalarProperty Name="Город" ColumnName="Город" />
+                <ScalarProperty Name="Страна" ColumnName="Страна" />
+                <ScalarProperty Name="IDПользователя" ColumnName="IDПользователя" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Пользователи">
+            <EntityTypeMapping TypeName="McLarenModel.Пользователи">
+              <MappingFragment StoreEntitySet="Пользователи">
+                <ScalarProperty Name="IDПользователя" ColumnName="IDПользователя" />
+                <ScalarProperty Name="Логин" ColumnName="Логин" />
+                <ScalarProperty Name="Пароль" ColumnName="Пароль" />
+                <ScalarProperty Name="Роль" ColumnName="Роль" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Продажи">
+            <EntityTypeMapping TypeName="McLarenModel.Продажи">
+              <MappingFragment StoreEntitySet="Продажи">
+                <ScalarProperty Name="IDПродажи" ColumnName="IDПродажи" />
+                <ScalarProperty Name="IDКлиента" ColumnName="IDКлиента" />
+                <ScalarProperty Name="IDАвтомобиля" ColumnName="IDАвтомобиля" />
+                <ScalarProperty Name="ДатаПродажи" ColumnName="ДатаПродажи" />
+                <ScalarProperty Name="ЦенаПродажи" ColumnName="ЦенаПродажи" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="СервисныеВизиты">
+            <EntityTypeMapping TypeName="McLarenModel.СервисныеВизиты">
+              <MappingFragment StoreEntitySet="СервисныеВизиты">
+                <ScalarProperty Name="IDВизита" ColumnName="IDВизита" />
+                <ScalarProperty Name="IDАвтомобиля" ColumnName="IDАвтомобиля" />
+                <ScalarProperty Name="IDКлиента" ColumnName="IDКлиента" />
+                <ScalarProperty Name="IDСотрудника" ColumnName="IDСотрудника" />
+                <ScalarProperty Name="ДатаВизита" ColumnName="ДатаВизита" />
+                <ScalarProperty Name="ТипОбслуживания" ColumnName="ТипОбслуживания" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="СкладАвтомобилей">
+            <EntityTypeMapping TypeName="McLarenModel.СкладАвтомобилей">
+              <MappingFragment StoreEntitySet="СкладАвтомобилей">
+                <ScalarProperty Name="IDЗаписиНаСкладе" ColumnName="IDЗаписиНаСкладе" />
+                <ScalarProperty Name="IDАвтомобиля" ColumnName="IDАвтомобиля" />
+                <ScalarProperty Name="Количество" ColumnName="Количество" />
+                <ScalarProperty Name="Местоположение" ColumnName="Местоположение" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Сотрудники">
+            <EntityTypeMapping TypeName="McLarenModel.Сотрудники">
+              <MappingFragment StoreEntitySet="Сотрудники">
+                <ScalarProperty Name="IDСотрудника" ColumnName="IDСотрудника" />
+                <ScalarProperty Name="Имя" ColumnName="Имя" />
+                <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+                <ScalarProperty Name="Должность" ColumnName="Должность" />
+                <ScalarProperty Name="ДатаНайма" ColumnName="ДатаНайма" />
+                <ScalarProperty Name="ЭлектроннаяПочта" ColumnName="ЭлектроннаяПочта" />
+                <ScalarProperty Name="IDПользователя" ColumnName="IDПользователя" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ТестДрайвы">
+            <EntityTypeMapping TypeName="McLarenModel.ТестДрайвы">
+              <MappingFragment StoreEntitySet="ТестДрайвы">
+                <ScalarProperty Name="IDТестДрайва" ColumnName="IDТестДрайва" />
+                <ScalarProperty Name="IDКлиента" ColumnName="IDКлиента" />
+                <ScalarProperty Name="IDАвтомобиля" ColumnName="IDАвтомобиля" />
+                <ScalarProperty Name="Дата" ColumnName="Дата" />
+                <ScalarProperty Name="Продолжительность" ColumnName="Продолжительность" />
+                <ScalarProperty Name="IDСотрудника" ColumnName="IDСотрудника" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ФинансовыеУсловия">
+            <EntityTypeMapping TypeName="McLarenModel.ФинансовыеУсловия">
+              <MappingFragment StoreEntitySet="ФинансовыеУсловия">
+                <ScalarProperty Name="IDФинансирования" ColumnName="IDФинансирования" />
+                <ScalarProperty Name="IDКлиента" ColumnName="IDКлиента" />
+                <ScalarProperty Name="IDАвтомобиля" ColumnName="IDАвтомобиля" />
+                <ScalarProperty Name="ПервоначальныйВзнос" ColumnName="ПервоначальныйВзнос" />
+                <ScalarProperty Name="ЕжемесячныйПлатеж" ColumnName="ЕжемесячныйПлатеж" />
+                <ScalarProperty Name="Срок" ColumnName="Срок" />
+                <ScalarProperty Name="ПроцентнаяСтавка" ColumnName="ПроцентнаяСтавка" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище McLarenModelContainer" CdmEntityContainer="McLarenEntities">
+    <EntitySetMapping Name="Автомобили">
+      <EntityTypeMapping TypeName="McLarenModel.Автомобили">
+        <MappingFragment StoreEntitySet="Автомобили">
+          <ScalarProperty Name="IDАвтомобиля" ColumnName="IDАвтомобиля" />
+          <ScalarProperty Name="Модель" ColumnName="Модель" />
+          <ScalarProperty Name="Год" ColumnName="Год" />
+          <ScalarProperty Name="Цвет" ColumnName="Цвет" />
+          <ScalarProperty Name="ТипДвигателя" ColumnName="ТипДвигателя" />
+          <ScalarProperty Name="Мощность" ColumnName="Мощность" />
+          <ScalarProperty Name="Цена" ColumnName="Цена" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Запчасти">
+      <EntityTypeMapping TypeName="McLarenModel.Запчасти">
+        <MappingFragment StoreEntitySet="Запчасти">
+          <ScalarProperty Name="IDЗапчасти" ColumnName="IDЗапчасти" />
+          <ScalarProperty Name="Название" ColumnName="Название" />
+          <ScalarProperty Name="Описание" ColumnName="Описание" />
+          <ScalarProperty Name="Цена" ColumnName="Цена" />
+          <ScalarProperty Name="КоличествоНаСкладе" ColumnName="КоличествоНаСкладе" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Клиенты">
+      <EntityTypeMapping TypeName="McLarenModel.Клиенты">
+        <MappingFragment StoreEntitySet="Клиенты">
+          <ScalarProperty Name="IDКлиента" ColumnName="IDКлиента" />
+          <ScalarProperty Name="Имя" ColumnName="Имя" />
+          <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+          <ScalarProperty Name="ЭлектроннаяПочта" ColumnName="ЭлектроннаяПочта" />
+          <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+          <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+          <ScalarProperty Name="Город" ColumnName="Город" />
+          <ScalarProperty Name="Страна" ColumnName="Страна" />
+          <ScalarProperty Name="IDПользователя" ColumnName="IDПользователя" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Пользователи">
+      <EntityTypeMapping TypeName="McLarenModel.Пользователи">
+        <MappingFragment StoreEntitySet="Пользователи">
+          <ScalarProperty Name="IDПользователя" ColumnName="IDПользователя" />
+          <ScalarProperty Name="Логин" ColumnName="Логин" />
+          <ScalarProperty Name="Пароль" ColumnName="Пароль" />
+          <ScalarProperty Name="Роль" ColumnName="Роль" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Продажи">
+      <EntityTypeMapping TypeName="McLarenModel.Продажи">
+        <MappingFragment StoreEntitySet="Продажи">
+          <ScalarProperty Name="IDПродажи" ColumnName="IDПродажи" />
+          <ScalarProperty Name="IDКлиента" ColumnName="IDКлиента" />
+          <ScalarProperty Name="IDАвтомобиля" ColumnName="IDАвтомобиля" />
+          <ScalarProperty Name="ДатаПродажи" ColumnName="ДатаПродажи" />
+          <ScalarProperty Name="ЦенаПродажи" ColumnName="ЦенаПродажи" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="СервисныеВизиты">
+      <EntityTypeMapping TypeName="McLarenModel.СервисныеВизиты">
+        <MappingFragment StoreEntitySet="СервисныеВизиты">
+          <ScalarProperty Name="IDВизита" ColumnName="IDВизита" />
+          <ScalarProperty Name="IDАвтомобиля" ColumnName="IDАвтомобиля" />
+          <ScalarProperty Name="IDКлиента" ColumnName="IDКлиента" />
+          <ScalarProperty Name="IDСотрудника" ColumnName="IDСотрудника" />
+          <ScalarProperty Name="ДатаВизита" ColumnName="ДатаВизита" />
+          <ScalarProperty Name="ТипОбслуживания" ColumnName="ТипОбслуживания" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="СкладАвтомобилей">
+      <EntityTypeMapping TypeName="McLarenModel.СкладАвтомобилей">
+        <MappingFragment StoreEntitySet="СкладАвтомобилей">
+          <ScalarProperty Name="IDЗаписиНаСкладе" ColumnName="IDЗаписиНаСкладе" />
+          <ScalarProperty Name="IDАвтомобиля" ColumnName="IDАвтомобиля" />
+          <ScalarProperty Name="Количество" ColumnName="Количество" />
+          <ScalarProperty Name="Местоположение" ColumnName="Местоположение" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Сотрудники">
+      <EntityTypeMapping TypeName="McLarenModel.Сотрудники">
+        <MappingFragment StoreEntitySet="Сотрудники">
+          <ScalarProperty Name="IDСотрудника" ColumnName="IDСотрудника" />
+          <ScalarProperty Name="Имя" ColumnName="Имя" />
+          <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+          <ScalarProperty Name="Должность" ColumnName="Должность" />
+          <ScalarProperty Name="ДатаНайма" ColumnName="ДатаНайма" />
+          <ScalarProperty Name="ЭлектроннаяПочта" ColumnName="ЭлектроннаяПочта" />
+          <ScalarProperty Name="IDПользователя" ColumnName="IDПользователя" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ТестДрайвы">
+      <EntityTypeMapping TypeName="McLarenModel.ТестДрайвы">
+        <MappingFragment StoreEntitySet="ТестДрайвы">
+          <ScalarProperty Name="IDТестДрайва" ColumnName="IDТестДрайва" />
+          <ScalarProperty Name="IDКлиента" ColumnName="IDКлиента" />
+          <ScalarProperty Name="IDАвтомобиля" ColumnName="IDАвтомобиля" />
+          <ScalarProperty Name="Дата" ColumnName="Дата" />
+          <ScalarProperty Name="Продолжительность" ColumnName="Продолжительность" />
+          <ScalarProperty Name="IDСотрудника" ColumnName="IDСотрудника" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ФинансовыеУсловия">
+      <EntityTypeMapping TypeName="McLarenModel.ФинансовыеУсловия">
+        <MappingFragment StoreEntitySet="ФинансовыеУсловия">
+          <ScalarProperty Name="IDФинансирования" ColumnName="IDФинансирования" />
+          <ScalarProperty Name="IDКлиента" ColumnName="IDКлиента" />
+          <ScalarProperty Name="IDАвтомобиля" ColumnName="IDАвтомобиля" />
+          <ScalarProperty Name="ПервоначальныйВзнос" ColumnName="ПервоначальныйВзнос" />
+          <ScalarProperty Name="ЕжемесячныйПлатеж" ColumnName="ЕжемесячныйПлатеж" />
+          <ScalarProperty Name="Срок" ColumnName="Срок" />
+          <ScalarProperty Name="ПроцентнаяСтавка" ColumnName="ПроцентнаяСтавка" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PragoMcLaren"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -13,39 +13,50 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Заголовки в верхней части окна -->
-        <DockPanel Grid.Row="0">
+        <DockPanel Grid.Row="0" Background="Black">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Label MouseDoubleClick="Test_Drive" Margin="5">Тест драйв</Label>
-                <Label MouseDoubleClick="INF" Margin="5">О компании</Label>
-                <Label MouseDoubleClick="KAB" Margin="5">Личный кабинет</Label>
+                <Label MouseDoubleClick="POKUPKA" Margin="5" Foreground="White">Купить Машину</Label>
+                <Label MouseDoubleClick="Test_Drive" Margin="5" Foreground="White">Тест драйв</Label>
+                <Label MouseDoubleClick="INF" Margin="5" Foreground="White">О компании</Label>
+                <Label MouseDoubleClick="KAB" Margin="5" Foreground="White">Личный кабинет</Label>
             </StackPanel>
         </DockPanel>
 
-        <!-- Основное содержимое -->
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Background="Black">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-            <!-- Блок с информацией о коллаборации -->
-            <Border Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="2" CornerRadius="1" Margin="5">
+            <Border Grid.Column="0" Grid.Row="0" BorderBrush="White" BorderThickness="2" CornerRadius="1" Margin="5">
                 <StackPanel>
                     <Image Source="Resources/OIG2.jpg" Width="170"/>
-                    <TextBlock TextWrapping="Wrap" Margin="10">
-            <Run Text="Наш диллерский центр сделал коллаборацию с Burger King. И теперь в нашем диллерском центре будут продаваться Роял Фри"/>
-                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" Margin="10" Foreground="White" Text="Наш диллерский центр сделал коллаборацию с Burger King. И теперь в нашем диллерском центре будут продаваться Роял Фри"/>
                 </StackPanel>
             </Border>
 
-            <!-- Дополнительный блок с информацией с Border -->
-            <Border Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="2" CornerRadius="1" Margin="5">
+            <Border Grid.Column="1" Grid.Row="0" BorderBrush="White" BorderThickness="2" CornerRadius="1" Margin="5">
                 <StackPanel>
                     <Image Source="Resources/OIG2.gpqee.jpg" Width="170"/>
-                    <TextBlock TextWrapping="Wrap" Margin="10">
-            <Run Text="Компания UnclePiston пытается отсудить у нас часть компании за то, что мы используем их продукцию😱"/>
-                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" Margin="10" Foreground="White" Text="Компания UnclePiston пытается отсудить у нас часть компании за то, что мы используем их продукцию😱"/>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="0" Grid.Row="1" BorderBrush="White" BorderThickness="2" CornerRadius="1" Margin="5">
+                <StackPanel>
+                    <Image Source="Resources/Aqua.jpg" Width="170"/>
+                    <TextBlock TextWrapping="Wrap" Margin="10" Foreground="White" Text="Наша компангия и компания AquaDreamer заключили договор,и теперь вы можете брать машины нашей марки в их авто прокате "/>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="1" Grid.Row="1" BorderBrush="White" BorderThickness="2" CornerRadius="1" Margin="5">
+                <StackPanel>
+                    <Image Source="Resources/Aqua.jpg" Width="170"/>
+                    <TextBlock TextWrapping="Wrap" Margin="10" Foreground="White" Text="Наша компангия и компания AquaDreamer заключили договор,и теперь вы можете брать машины нашей марки в их авто прокате "/>
                 </StackPanel>
             </Border>
         </Grid>
