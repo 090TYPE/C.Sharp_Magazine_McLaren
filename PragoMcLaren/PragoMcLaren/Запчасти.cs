@@ -14,10 +14,19 @@ namespace PragoMcLaren
     
     public partial class Запчасти
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Запчасти()
+        {
+            this.АвтомобилиИЗапчасти = new HashSet<АвтомобилиИЗапчасти>();
+        }
+    
         public int IDЗапчасти { get; set; }
         public string Название { get; set; }
         public string Описание { get; set; }
         public Nullable<decimal> Цена { get; set; }
         public Nullable<int> КоличествоНаСкладе { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<АвтомобилиИЗапчасти> АвтомобилиИЗапчасти { get; set; }
     }
 }

@@ -1,46 +1,108 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace PragoMcLaren
 {
-    public class Car
+    public partial class CARS : Window, INotifyPropertyChanged
     {
-        public string Model { get; set; }
-        public string ImagePath { get; set; }
-        public string Description { get; set; }
-    }
+        private ObservableCollection<Car> _cars;
+        public ObservableCollection<Car> Cars
+        {
+            get => _cars;
+            set
+            {
+                _cars = value;
+                OnPropertyChanged(nameof(Cars));
+            }
+        }
 
-    /// <summary>
-    /// Логика взаимодействия для CARS.xaml
-    /// </summary>
-    public partial class CARS : Window
-    {
-        public List<Car> Cars { get; set; }
+        private int _selectedRowCount;
+        public int SelectedRowCount
+        {
+            get => _selectedRowCount;
+            set
+            {
+                _selectedRowCount = value;
+                OnPropertyChanged(nameof(SelectedRowCount));
+                UpdateDisplayedCars(); // Обновляем список машин при изменении количества строк
+            }
+        }
+
+        public List<int> RowCounts { get; set; } = new List<int> { 3, 6, 12 };
+
+        // Реализация INotifyPropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         public CARS()
         {
             InitializeComponent();
 
-            Cars = new List<Car>
-            {
-                new Car { Model = "McLaren 720S", ImagePath = "Images/720S.jpg", Description = "Спортивный автомобиль среднего класса." },
-                new Car { Model = "McLaren P1", ImagePath = "Images/P1.jpg", Description = "Гибридный суперкар с ограниченным выпуском." },
-                // Добавьте другие модели по аналогии
-            };
+            DataContext = this; // Устанавливаем DataContext для привязки данных
 
-            this.DataContext = this;
+            _cars = new ObservableCollection<Car>(); // Инициализация пустой коллекцией
+
+            LoadCars();
         }
-     
 
+        private void LoadCars()
+        {
+            using (var context = new McLarenEntities1())
+            {
+                try
+                {
+                    var carsQuery = context.Автомобили
+                                           .Select(car => new Car
+                                           {
+                                               Модель = car.Модель,
+                                               ImagePath = "Resources/" + car.Модель.ToLower() + ".jpg",
+                                               Description = car.Модель + " - " + car.ТипДвигателя + " с мощностью " + car.Мощность.ToString(),
+                                               Год = car.Год,
+                                               Цвет = car.Цвет,
+                                               ТипДвигателя = car.ТипДвигателя,
+                                               Мощность = car.Мощность,
+                                               Цена = car.Цена
+                                           }).ToList();
+
+                    Cars = new ObservableCollection<Car>(carsQuery.Take(SelectedRowCount));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при получении данных: " + ex.Message);
+                }
+            }
+        }
+
+        private void UpdateDisplayedCars()
+        {
+            // Этот метод должен быть изменен для извлечения машин на основе нового количества строк
+            // Для простоты он сейчас просто сбрасывает список машин, чтобы вызвать обновление UI
+            LoadCars(); // Перезагрузить или обновить машины в соответствии с новым SelectedRowCount
+        }
+
+        private void RowCountComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            // Фактическая логика обработки изменения выбора уже управляется через привязку и сеттер свойства
+        }
+    }
+
+    // Убедитесь, что ваш класс Car соответствует ожиданиям
+    public class Car
+    {
+        public string Модель { get; set; }
+        public string ImagePath { get; set; }
+        public string Description { get; set; }
+        public int? Год { get; set; }
+        public string Цвет { get; set; }
+        public string ТипДвигателя { get; set; }
+        public int? Мощность { get; set; }
+        public decimal? Цена { get; set; }
     }
 }

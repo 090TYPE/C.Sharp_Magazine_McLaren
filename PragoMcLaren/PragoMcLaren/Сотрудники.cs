@@ -18,6 +18,7 @@ namespace PragoMcLaren
         public Сотрудники()
         {
             this.СервисныеВизиты = new HashSet<СервисныеВизиты>();
+            this.ТестДрайвы = new HashSet<ТестДрайвы>();
         }
     
         public int IDСотрудника { get; set; }
@@ -31,5 +32,7 @@ namespace PragoMcLaren
         public virtual Пользователи Пользователи { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<СервисныеВизиты> СервисныеВизиты { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ТестДрайвы> ТестДрайвы { get; set; }
     }
 }

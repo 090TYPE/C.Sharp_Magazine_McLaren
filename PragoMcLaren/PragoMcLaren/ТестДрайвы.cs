@@ -23,5 +23,6 @@ namespace PragoMcLaren
     
         public virtual Автомобили Автомобили { get; set; }
         public virtual Клиенты Клиенты { get; set; }
+        public virtual Сотрудники Сотрудники { get; set; }
     }
 }

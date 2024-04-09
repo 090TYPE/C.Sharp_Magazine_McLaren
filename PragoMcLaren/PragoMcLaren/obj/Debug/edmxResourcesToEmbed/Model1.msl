@@ -1,6 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище McLarenModelContainer" CdmEntityContainer="McLarenEntities">
+  <EntityContainerMapping StorageEntityContainer="Хранилище McLarenModelContainer" CdmEntityContainer="McLarenEntities1">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="McLarenModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Автомобили">
       <EntityTypeMapping TypeName="McLarenModel.Автомобили">
         <MappingFragment StoreEntitySet="Автомобили">
@@ -11,6 +22,16 @@
           <ScalarProperty Name="ТипДвигателя" ColumnName="ТипДвигателя" />
           <ScalarProperty Name="Мощность" ColumnName="Мощность" />
           <ScalarProperty Name="Цена" ColumnName="Цена" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="АвтомобилиИЗапчасти">
+      <EntityTypeMapping TypeName="McLarenModel.АвтомобилиИЗапчасти">
+        <MappingFragment StoreEntitySet="АвтомобилиИЗапчасти">
+          <ScalarProperty Name="IDАИЗ" ColumnName="IDАИЗ" />
+          <ScalarProperty Name="IDАвтомобиля" ColumnName="IDАвтомобиля" />
+          <ScalarProperty Name="IDЗапчасти" ColumnName="IDЗапчасти" />
+          <ScalarProperty Name="НеобходимоеКоличество" ColumnName="НеобходимоеКоличество" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -121,5 +142,29 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище McLarenModel.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище McLarenModel.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище McLarenModel.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище McLarenModel.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="McLarenModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище McLarenModel.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="McLarenModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище McLarenModel.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище McLarenModel.sp_upgraddiagrams" />
   </EntityContainerMapping>
 </Mapping>

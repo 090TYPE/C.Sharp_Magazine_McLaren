@@ -17,6 +17,7 @@ namespace PragoMcLaren
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Автомобили()
         {
+            this.АвтомобилиИЗапчасти = new HashSet<АвтомобилиИЗапчасти>();
             this.Продажи = new HashSet<Продажи>();
             this.СервисныеВизиты = new HashSet<СервисныеВизиты>();
             this.СкладАвтомобилей = new HashSet<СкладАвтомобилей>();
@@ -32,6 +33,8 @@ namespace PragoMcLaren
         public Nullable<int> Мощность { get; set; }
         public Nullable<decimal> Цена { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<АвтомобилиИЗапчасти> АвтомобилиИЗапчасти { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Продажи> Продажи { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

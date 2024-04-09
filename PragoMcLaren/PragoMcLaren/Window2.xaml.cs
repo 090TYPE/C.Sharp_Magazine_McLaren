@@ -25,7 +25,45 @@ namespace PragoMcLaren
         }
         private void Reg_Button_Click(object sender, RoutedEventArgs e)
         {
+            string login = LoginTB.Text.Trim();
+            string password = PasswordTB.Text.Trim();
+            string confirmPassword = ConfirmPasswordTB.Text.Trim();
 
+            if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
+            {
+                MessageBox.Show("Заполните все поля!");
+                return;
+            }
+
+            if (password != confirmPassword)
+            {
+                MessageBox.Show("Пароль и подтверждение пароля не совпадают!");
+                return;
+            }
+
+            using (var context = new McLarenEntities1())
+            {
+                var existingUser = context.Пользователи.FirstOrDefault(u => u.Логин == login);
+                if (existingUser != null)
+                {
+                    MessageBox.Show("Пользователь с таким логином уже существует!");
+                    return;
+                }
+
+                var newUser = new Пользователи
+                {
+                    Логин = login,
+                    Пароль = password
+                };
+
+                context.Пользователи.Add(newUser);
+                context.SaveChanges();
+            }
+
+            MessageBox.Show("Пользователь успешно зарегистрирован!");
+            LoginTB.Clear();
+            PasswordTB.Clear();
+            ConfirmPasswordTB.Clear();
         }
         private void Exit_Button_Click(Object sender, RoutedEventArgs e)
         {

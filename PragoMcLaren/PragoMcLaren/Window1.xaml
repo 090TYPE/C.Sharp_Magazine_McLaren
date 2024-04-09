@@ -10,9 +10,9 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,82,0,0">
             <TextBlock Text="Вход" FontSize="18" TextAlignment="Center"/>
             <TextBlock Margin="0,5,0,0" Text="Логин" FontSize="13"/>
-            <TextBox Margin="0,5,0,0" Width="126"/>
+            <TextBox Margin="0,5,0,0" Width="126" x:Name="TxtLogin"/>
             <TextBlock Text="Пароль" Margin="0,5,0,0" FontSize="13"/>
-            <TextBox Margin="0,5,0,0" Width="126"/>
+            <TextBox Margin="0,5,0,0" Width="126" x:Name="TxtPassword"/>
             <Button Margin="0,5,0,0" Width="126" Height="30" Click="Vhod_Button_Click" x:Name="Vhod_Button">Вход</Button>
             <Button Margin="0,5,0,0" Width="126" Height="30" Click="Reg_Button_Click" x:Name="Reg_Button">Регестрация</Button>
             <Button Margin="0,5,0,0" Width="126" Height="30" Click="Exit_Button_Click" x:Name="Exit_Button" >Выход</Button>

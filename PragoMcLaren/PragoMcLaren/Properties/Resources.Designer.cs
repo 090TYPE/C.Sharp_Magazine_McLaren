@@ -63,6 +63,16 @@ namespace PragoMcLaren.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _720S {
+            get {
+                object obj = ResourceManager.GetObject("_720S", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Aqua {
             get {
                 object obj = ResourceManager.GetObject("Aqua", resourceCulture);
@@ -86,6 +96,16 @@ namespace PragoMcLaren.Properties {
         internal static System.Drawing.Bitmap OIG2_gpqee {
             get {
                 object obj = ResourceManager.GetObject("OIG2_gpqee", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap P1 {
+            get {
+                object obj = ResourceManager.GetObject("P1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
