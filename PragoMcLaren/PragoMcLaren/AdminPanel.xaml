@@ -1,0 +1,32 @@
+﻿<Window x:Class="PragoMcLaren.AdminPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PragoMcLaren"
+        mc:Ignorable="d"
+        Title="AdminPanel" Height="100" Width="493">
+    <Grid Margin="0,0,0,-6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Background="Black">
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <Label
+            Margin="5"
+            Foreground="White"
+            MouseDoubleClick="DataBase">
+                    БД
+                </Label>
+                <Label
+            Margin="5"
+            Foreground="White"
+            MouseDoubleClick="AddProduct">
+                    Добавить товар
+                </Label>
+               
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>

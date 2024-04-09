@@ -72,3 +72,9 @@ C:\Users\090\Documents\GitHub\C.Sharp_Magazine_McLaren\PragoMcLaren\PragoMcLaren
 C:\Users\090\Documents\GitHub\C.Sharp_Magazine_McLaren\PragoMcLaren\PragoMcLaren\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
 C:\Users\090\Documents\GitHub\C.Sharp_Magazine_McLaren\PragoMcLaren\PragoMcLaren\bin\Debug\GalaSoft.MvvmLight.Platform.xml
 C:\Users\090\Documents\GitHub\C.Sharp_Magazine_McLaren\PragoMcLaren\PragoMcLaren\obj\Debug\App.baml
+C:\Users\090\Documents\GitHub\C.Sharp_Magazine_McLaren\PragoMcLaren\PragoMcLaren\obj\Debug\AdminPanel.g.cs
+C:\Users\090\Documents\GitHub\C.Sharp_Magazine_McLaren\PragoMcLaren\PragoMcLaren\obj\Debug\PasswordDialog.g.cs
+C:\Users\090\Documents\GitHub\C.Sharp_Magazine_McLaren\PragoMcLaren\PragoMcLaren\obj\Debug\AdminPanel.baml
+C:\Users\090\Documents\GitHub\C.Sharp_Magazine_McLaren\PragoMcLaren\PragoMcLaren\obj\Debug\PasswordDialog.baml
+C:\Users\090\Documents\GitHub\C.Sharp_Magazine_McLaren\PragoMcLaren\PragoMcLaren\obj\Debug\DataBase.g.cs
+C:\Users\090\Documents\GitHub\C.Sharp_Magazine_McLaren\PragoMcLaren\PragoMcLaren\obj\Debug\DataBase.baml

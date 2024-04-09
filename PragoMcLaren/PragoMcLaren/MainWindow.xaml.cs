@@ -45,5 +45,10 @@ namespace PragoMcLaren
         {
 
         }
+        private void AdmPan(object sender, RoutedEventArgs e)
+        {
+            PasswordDialog dialog = new PasswordDialog();
+            dialog.Show();
+        }
     }
 }

@@ -21,6 +21,12 @@
                 <Label
                     Margin="5"
                     Foreground="White"
+                    MouseDoubleClick="AdmPan">
+                    Админ панель
+                </Label>
+                <Label
+                    Margin="5"
+                    Foreground="White"
                     MouseDoubleClick="POKUPKA">
                     Купить Машину
                 </Label>
