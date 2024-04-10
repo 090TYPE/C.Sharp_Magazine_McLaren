@@ -22,7 +22,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="10" Orientation="Horizontal">
-                                <Image Width="100" Height="60" Margin="10" Source="{Binding ImagePath}" />
+                                <Image Width="100" Height="60" Margin="10" Source="{Binding Изображение}" />
                                 <StackPanel Margin="10">
                                     <TextBlock FontWeight="Bold" Text="{Binding Model}" />
                                     <TextBlock Width="200" Text="{Binding Description}" TextWrapping="Wrap" />

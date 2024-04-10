@@ -22,6 +22,7 @@
           <ScalarProperty Name="ТипДвигателя" ColumnName="ТипДвигателя" />
           <ScalarProperty Name="Мощность" ColumnName="Мощность" />
           <ScalarProperty Name="Цена" ColumnName="Цена" />
+          <ScalarProperty Name="Изображение" ColumnName="Изображение" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

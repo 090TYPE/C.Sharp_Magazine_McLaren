@@ -40,6 +40,6 @@
                 <!-- Продолжайте добавлять DataGrid в новые ряды и колонки -->
             </Grid>
         </ScrollViewer>
-        
+        <Button Content="Сохранить изменения" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" Click="SaveChanges_Click"/>
     </Grid>
 </Window>

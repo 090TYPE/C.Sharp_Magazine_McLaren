@@ -30,7 +30,8 @@ namespace PragoMcLaren
         }
         private void AddProduct(object sender, RoutedEventArgs e)
         {
-
+            AddProduct addProduct = new AddProduct();
+            addProduct.Show();
         }
     }
 }

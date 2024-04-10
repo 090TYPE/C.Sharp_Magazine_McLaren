@@ -27,6 +27,16 @@ namespace PragoMcLaren
             InitializeComponent();
             db = new McLarenEntities1(); // Инициализация контекста
             db.Автомобили.Load(); // Загрузка данных
+            db.АвтомобилиИЗапчасти.Load();
+            db.Запчасти.Load();
+            db.Клиенты.Load();
+            db.Пользователи.Load();
+            db.Продажи.Load();
+            db.СервисныеВизиты.Load();
+            db.СкладАвтомобилей.Load();
+            db.Сотрудники.Load();
+            db.ТестДрайвы.Load();
+            db.ФинансовыеУсловия.Load();
             DataGrid1.ItemsSource = db.Автомобили.Local;
             DataGrid2.ItemsSource = db.АвтомобилиИЗапчасти.Local;
             DataGrid3.ItemsSource = db.Запчасти.Local;
@@ -39,6 +49,17 @@ namespace PragoMcLaren
             DataGrid10.ItemsSource = db.ТестДрайвы.Local;
             DataGrid11.ItemsSource = db.ФинансовыеУсловия.Local;
         }
-
+        private void SaveChanges_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                db.SaveChanges(); // Сохранение изменений для основного контекста
+                MessageBox.Show("Изменения сохранены успешно.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при сохранении изменений: " + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
     }
 }

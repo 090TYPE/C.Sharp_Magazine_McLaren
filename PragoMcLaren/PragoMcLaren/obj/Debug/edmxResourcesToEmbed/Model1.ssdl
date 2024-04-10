@@ -21,6 +21,7 @@
     <Property Name="ТипДвигателя" Type="nvarchar" MaxLength="30" />
     <Property Name="Мощность" Type="int" />
     <Property Name="Цена" Type="money" />
+    <Property Name="Изображение" Type="image" />
   </EntityType>
   <EntityType Name="АвтомобилиИЗапчасти">
     <Key>

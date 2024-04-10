@@ -26,6 +26,7 @@
           <Property Name="ТипДвигателя" Type="nvarchar" MaxLength="30" />
           <Property Name="Мощность" Type="int" />
           <Property Name="Цена" Type="money" />
+          <Property Name="Изображение" Type="image" />
         </EntityType>
         <EntityType Name="АвтомобилиИЗапчасти">
           <Key>
@@ -445,6 +446,7 @@
           <Property Name="ТипДвигателя" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Мощность" Type="Int32" />
           <Property Name="Цена" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Изображение" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="АвтомобилиИЗапчасти" Relationship="Self.FK__Автомобил__IDАвт__61316BF4" FromRole="Автомобили" ToRole="АвтомобилиИЗапчасти" />
           <NavigationProperty Name="Продажи" Relationship="Self.FK__Продажи__IDАвтом__5006DFF2" FromRole="Автомобили" ToRole="Продажи" />
           <NavigationProperty Name="СервисныеВизиты" Relationship="Self.FK__Сервисные__IDАвт__5B78929E" FromRole="Автомобили" ToRole="СервисныеВизиты" />
@@ -905,6 +907,7 @@
                 <ScalarProperty Name="ТипДвигателя" ColumnName="ТипДвигателя" />
                 <ScalarProperty Name="Мощность" ColumnName="Мощность" />
                 <ScalarProperty Name="Цена" ColumnName="Цена" />
+                <ScalarProperty Name="Изображение" ColumnName="Изображение" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

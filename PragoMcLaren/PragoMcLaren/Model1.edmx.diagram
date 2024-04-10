@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f321c7bea3d945798db63ae5396c54e3" Name="Diagram1" ZoomLevel="64">
+      <Diagram DiagramId="39d3c7827c50492ab249afbaebd55aba" Name="Diagram1">
         <EntityTypeShape EntityType="McLarenModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="McLarenModel.Автомобили" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="McLarenModel.Автомобили" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="McLarenModel.АвтомобилиИЗапчасти" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
         <EntityTypeShape EntityType="McLarenModel.Запчасти" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="McLarenModel.Клиенты" Width="1.5" PointX="3.75" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="McLarenModel.Пользователи" Width="1.5" PointX="1.5" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="McLarenModel.Продажи" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="McLarenModel.СервисныеВизиты" Width="1.5" PointX="6" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="McLarenModel.СкладАвтомобилей" Width="1.5" PointX="9.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="McLarenModel.Сотрудники" Width="1.5" PointX="10.5" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="McLarenModel.СкладАвтомобилей" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="McLarenModel.Сотрудники" Width="1.5" PointX="3.75" PointY="22.5" IsExpanded="true" />
         <EntityTypeShape EntityType="McLarenModel.ТестДрайвы" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
         <EntityTypeShape EntityType="McLarenModel.ФинансовыеУсловия" Width="1.5" PointX="6" PointY="5.625" IsExpanded="true" />
         <AssociationConnector Association="McLarenModel.FK__Автомобил__IDАвт__61316BF4" ManuallyRouted="false" />

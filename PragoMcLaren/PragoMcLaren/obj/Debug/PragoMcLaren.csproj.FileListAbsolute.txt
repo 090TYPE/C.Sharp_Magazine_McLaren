@@ -78,3 +78,5 @@ C:\Users\090\Documents\GitHub\C.Sharp_Magazine_McLaren\PragoMcLaren\PragoMcLaren
 C:\Users\090\Documents\GitHub\C.Sharp_Magazine_McLaren\PragoMcLaren\PragoMcLaren\obj\Debug\PasswordDialog.baml
 C:\Users\090\Documents\GitHub\C.Sharp_Magazine_McLaren\PragoMcLaren\PragoMcLaren\obj\Debug\DataBase.g.cs
 C:\Users\090\Documents\GitHub\C.Sharp_Magazine_McLaren\PragoMcLaren\PragoMcLaren\obj\Debug\DataBase.baml
+C:\Users\090\Documents\GitHub\C.Sharp_Magazine_McLaren\PragoMcLaren\PragoMcLaren\obj\Debug\AddProduct.g.cs
+C:\Users\090\Documents\GitHub\C.Sharp_Magazine_McLaren\PragoMcLaren\PragoMcLaren\obj\Debug\AddProduct.baml

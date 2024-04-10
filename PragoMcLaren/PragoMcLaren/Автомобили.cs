@@ -32,6 +32,7 @@ namespace PragoMcLaren
         public string ТипДвигателя { get; set; }
         public Nullable<int> Мощность { get; set; }
         public Nullable<decimal> Цена { get; set; }
+        public byte[] Изображение { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<АвтомобилиИЗапчасти> АвтомобилиИЗапчасти { get; set; }

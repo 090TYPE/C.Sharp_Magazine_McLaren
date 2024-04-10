@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Windows;
+using System.Windows.Media.Imaging;
 
 namespace PragoMcLaren
 {
@@ -58,11 +60,11 @@ namespace PragoMcLaren
             {
                 try
                 {
-                    var carsQuery = context.Автомобили
+                    var carsQuery = context.Автомобили.ToList() // Загружаем данные в память
                                            .Select(car => new Car
                                            {
                                                Модель = car.Модель,
-                                               ImagePath = "Resources/" + car.Модель.ToLower() + ".jpg",
+                                               Изображение = ByteArrayToBitmapImage(car.Изображение), // Преобразовать бинарные данные изображения в BitmapImage
                                                Description = car.Модель + " - " + car.ТипДвигателя + " с мощностью " + car.Мощность.ToString(),
                                                Год = car.Год,
                                                Цвет = car.Цвет,
@@ -91,6 +93,22 @@ namespace PragoMcLaren
         {
             // Фактическая логика обработки изменения выбора уже управляется через привязку и сеттер свойства
         }
+        public BitmapImage ByteArrayToBitmapImage(byte[] byteArray)
+        {
+            if (byteArray == null || byteArray.Length == 0)
+                return null;
+
+            BitmapImage image = new BitmapImage();
+            using (MemoryStream memoryStream = new MemoryStream(byteArray))
+            {
+                memoryStream.Position = 0;
+                image.BeginInit();
+                image.StreamSource = memoryStream;
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.EndInit();
+            }
+            return image;
+        }
     }
 
     // Убедитесь, что ваш класс Car соответствует ожиданиям
@@ -104,5 +122,6 @@ namespace PragoMcLaren
         public string ТипДвигателя { get; set; }
         public int? Мощность { get; set; }
         public decimal? Цена { get; set; }
+        public BitmapImage Изображение { get; set; }
     }
 }

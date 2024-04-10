@@ -1,0 +1,60 @@
+﻿<Window x:Class="PragoMcLaren.AddProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PragoMcLaren"
+        mc:Ignorable="d"
+        Title="AddProduct" Height="503" Width="321">
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <!-- Добавляем строку для изображения -->
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <!-- Остальные строки -->
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Элемент Image для отображения изображения -->
+        <Image Grid.Row="0" x:Name="imgProduct" Stretch="UniformToFill" Margin="5" Height="100"/>
+
+        <!-- Модель -->
+        <Label Grid.Row="1" Content="Модель:" Foreground="White"/>
+        <TextBox Grid.Row="2" x:Name="txtModel" Margin="5"/>
+
+        <!-- Год -->
+        <Label Grid.Row="3" Content="Год:" Foreground="White"/>
+        <TextBox Grid.Row="4" x:Name="txtYear" Margin="5"/>
+
+        <!-- Цвет -->
+        <Label Grid.Row="5" Content="Цвет:" Foreground="White"/>
+        <TextBox Grid.Row="6" x:Name="txtColor" Margin="5"/>
+
+        <!-- Тип двигателя -->
+        <Label Grid.Row="7" Content="Тип двигателя:" Foreground="White"/>
+        <TextBox Grid.Row="8" x:Name="txtEngineType" Margin="5"/>
+
+        <!-- Мощность -->
+        <Label Grid.Row="9" Content="Мощность:" Foreground="White"/>
+        <TextBox Grid.Row="10" x:Name="txtPower" Margin="5"/>
+
+        <!-- Цена -->
+        <Label Grid.Row="11" Content="Цена:" Foreground="White"/>
+        <TextBox Grid.Row="12" x:Name="txtPrice" Margin="5"/>
+
+        <!-- Кнопка загрузки изображения -->
+        <Button Grid.Row="13" Content="Выбрать изображение" Click="UploadImage_Click" HorizontalAlignment="Center" Margin="5"/>
+    </Grid>
+</Window>
