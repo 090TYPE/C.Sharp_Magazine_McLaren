@@ -14,6 +14,12 @@
         <DockPanel Grid.Row="0" Background="Black">
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <Label
+                    Margin="5"
+                    Foreground="White"
+                    MouseDoubleClick="Otchet">
+                    Отчёт
+                </Label>
+                <Label
             Margin="5"
             Foreground="White"
             MouseDoubleClick="DataBase">

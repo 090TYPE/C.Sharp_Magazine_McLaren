@@ -3,28 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|c:\\users\\090\\documents\\github\\c.sharp_magazine_mclaren\\pragomclaren\\pragomclaren\\addproduct.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|solutionrelative:pragomclaren\\addproduct.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|c:\\users\\090\\documents\\github\\c.sharp_magazine_mclaren\\pragomclaren\\pragomclaren\\uploadingareport.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|solutionrelative:pragomclaren\\uploadingareport.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|c:\\users\\090\\documents\\github\\c.sharp_magazine_mclaren\\pragomclaren\\pragomclaren\\addproduct.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|solutionrelative:pragomclaren\\addproduct.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|c:\\users\\090\\documents\\github\\c.sharp_magazine_mclaren\\pragomclaren\\pragomclaren\\generateword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|solutionrelative:pragomclaren\\generateword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\pragomclaren\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|solutionrelative:pragomclaren\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|c:\\users\\090\\documents\\github\\c.sharp_magazine_mclaren\\pragomclaren\\pragomclaren\\generateexcle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|solutionrelative:pragomclaren\\generateexcle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|c:\\users\\090\\documents\\github\\c.sharp_magazine_mclaren\\pragomclaren\\pragomclaren\\\u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|solutionrelative:pragomclaren\\\u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|c:\\users\\090\\documents\\github\\c.sharp_magazine_mclaren\\pragomclaren\\pragomclaren\\uploadingareport.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|solutionrelative:pragomclaren\\uploadingareport.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\pragomclaren\\adminpanel.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|solutionrelative:pragomclaren\\adminpanel.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\pragomclaren\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|solutionrelative:pragomclaren\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\pragomclaren\\adminpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|solutionrelative:pragomclaren\\adminpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\pragomclaren\\addproduct.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|solutionrelative:pragomclaren\\addproduct.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\pragomclaren\\addproduct.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF2D3173-8A6D-41CB-88F5-EF529D5C6D92}|PragoMcLaren\\PragoMcLaren.csproj|solutionrelative:pragomclaren\\addproduct.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,55 +54,96 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GenerateWord.cs",
+              "DocumentMoniker": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\GenerateWord.cs",
+              "RelativeDocumentMoniker": "PragoMcLaren\\GenerateWord.cs",
+              "ToolTip": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\GenerateWord.cs",
+              "RelativeToolTip": "PragoMcLaren\\GenerateWord.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABUAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T08:12:49.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "PragoMcLaren\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\MainWindow.xaml",
-              "RelativeToolTip": "PragoMcLaren\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-09T18:53:12.328Z",
+              "Title": "GenerateExcle.cs",
+              "DocumentMoniker": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\GenerateExcle.cs",
+              "RelativeDocumentMoniker": "PragoMcLaren\\GenerateExcle.cs",
+              "ToolTip": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\GenerateExcle.cs",
+              "RelativeToolTip": "PragoMcLaren\\GenerateExcle.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T08:08:18.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438.cs",
+              "DocumentMoniker": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438.cs",
+              "RelativeDocumentMoniker": "PragoMcLaren\\\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438.cs",
+              "ToolTip": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438.cs",
+              "RelativeToolTip": "PragoMcLaren\\\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAADIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T12:16:21.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UploadingAReport.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\UploadingAReport.xaml.cs",
+              "RelativeDocumentMoniker": "PragoMcLaren\\UploadingAReport.xaml.cs",
+              "ToolTip": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\UploadingAReport.xaml.cs",
+              "RelativeToolTip": "PragoMcLaren\\UploadingAReport.xaml.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAUwDEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T12:06:28.77Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "PragoMcLaren\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\MainWindow.xaml.cs",
-              "RelativeToolTip": "PragoMcLaren\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAC8AAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-09T18:55:19.904Z"
+              "Title": "UploadingAReport.xaml",
+              "DocumentMoniker": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\UploadingAReport.xaml",
+              "RelativeDocumentMoniker": "PragoMcLaren\\UploadingAReport.xaml",
+              "ToolTip": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\UploadingAReport.xaml",
+              "RelativeToolTip": "PragoMcLaren\\UploadingAReport.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-17T12:02:27.587Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AdminPanel.xaml",
               "DocumentMoniker": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\AdminPanel.xaml",
               "RelativeDocumentMoniker": "PragoMcLaren\\AdminPanel.xaml",
               "ToolTip": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\AdminPanel.xaml",
               "RelativeToolTip": "PragoMcLaren\\AdminPanel.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-09T19:04:16.656Z"
+              "WhenOpened": "2024-04-09T19:04:16.656Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "AdminPanel.xaml.cs",
               "DocumentMoniker": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\AdminPanel.xaml.cs",
               "RelativeDocumentMoniker": "PragoMcLaren\\AdminPanel.xaml.cs",
               "ToolTip": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\AdminPanel.xaml.cs",
               "RelativeToolTip": "PragoMcLaren\\AdminPanel.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAeAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACYAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-09T19:11:17.271Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "AddProduct.xaml",
               "DocumentMoniker": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\AddProduct.xaml",
               "RelativeDocumentMoniker": "PragoMcLaren\\AddProduct.xaml",
@@ -102,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "AddProduct.xaml.cs",
               "DocumentMoniker": "C:\\Users\\090\\Documents\\GitHub\\C.Sharp_Magazine_McLaren\\PragoMcLaren\\PragoMcLaren\\AddProduct.xaml.cs",
               "RelativeDocumentMoniker": "PragoMcLaren\\AddProduct.xaml.cs",
@@ -110,8 +163,7 @@
               "RelativeToolTip": "PragoMcLaren\\AddProduct.xaml.cs",
               "ViewState": "AQIAACoAAAAAAAAAAADwvzIAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T09:07:00.635Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-10T09:07:00.635Z"
             }
           ]
         },

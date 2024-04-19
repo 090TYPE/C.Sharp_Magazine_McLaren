@@ -1,0 +1,16 @@
+﻿<Window x:Class="PragoMcLaren.UploadingAReport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PragoMcLaren"
+        mc:Ignorable="d"
+        Title="UploadingAReport" Height="188" Width="313">
+    <Grid>
+        <StackPanel>
+            <Label HorizontalAlignment="Center">Куда хотите выгрузить?</Label>
+            <Button Click="Word_Click">Выгрузить в Word</Button>
+            <Button Click="Exele_Click">Выгрузить в Exele</Button>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -33,5 +33,10 @@ namespace PragoMcLaren
             AddProduct addProduct = new AddProduct();
             addProduct.Show();
         }
+        private void Otchet(object sender, RoutedEventArgs e)
+        {
+            UploadingAReport uploadingAReport = new UploadingAReport();
+            uploadingAReport.Show();
+        }
     }
 }
